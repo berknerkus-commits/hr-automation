@@ -1,42 +1,33 @@
-# HR Automation System 🚀
+# HR Automation System
 
-A modern, full-stack HR automation platform built to streamline core human resources operations — from candidate tracking to leave management.
+A modern, full-stack HR platform that centralizes recruitment, onboarding, and leave management into a single operational hub.
 
-**Live Demo:** https://hrautomate-3a4rraur.manus.space
+🔗 **Live Demo:** https://hrautomate-3a4rraur.manus.space
+
+---
+
+## Overview
+
+HR Automation System is designed to eliminate the fragmented, manual workflows that slow down HR teams. Instead of juggling spreadsheets and email threads, everything from candidate pipelines to leave approvals happens in one place.
 
 ---
 
 ## Features
 
-### 📊 Dashboard
-Central command center with real-time metrics — open positions, total candidates, active onboarding processes, and pending leave requests at a glance.
+### Dashboard
+Real-time overview of open positions, total candidates, active onboarding processes, and pending leave requests.
 
-### 🎯 Applicant Tracking System (ATS)
-- Create and manage job postings
-- Kanban pipeline with 5 stages: **Application → Interview → Offer → Hired → Rejected**
-- Drag-and-drop candidate management
-- Multi-position tracking
+### Applicant Tracking System (ATS)
+Kanban-based recruitment pipeline with five stages: Application, Interview, Offer, Hired, and Rejected. Supports multiple concurrent job postings with independent candidate pipelines.
 
-### 👤 Onboarding Management
-- New employee registration and tracking
-- Auto-generated task checklists per employee
-- Progress tracking with completion percentages
-- Status pipeline: Pending → In Progress → Completed
+### Onboarding Management
+Structured onboarding workflows with auto-generated task checklists, progress tracking, and status visibility across all new hires simultaneously.
 
-### 🏖️ Leave Management
-- Leave request submission and approval workflow
-- Balance tracking (annual, sick, unpaid, emergency)
-- Calendar view for team visibility
-- Admin approval/rejection with notifications
+### Leave Management
+End-to-end leave request lifecycle — submission, approval, rejection, and balance tracking. Includes a calendar view for team-wide visibility.
 
-### 🔐 Role-Based Access Control
-| Feature | Admin | Employee |
-|---------|-------|----------|
-| All modules | ✅ | ❌ |
-| User management | ✅ | ❌ |
-| Leave approval | ✅ | ❌ |
-| Own leave requests | ✅ | ✅ |
-| Own balance view | ✅ | ✅ |
+### Role-Based Access Control
+Two-tier permission system. Admins have full access across all modules. Employees are scoped to their own leave requests and balance data.
 
 ---
 
@@ -44,42 +35,32 @@ Central command center with real-time metrics — open positions, total candidat
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | React + TypeScript + Vite |
-| UI Components | shadcn/ui + Tailwind CSS |
-| Backend | Node.js + tRPC |
-| Database | SQLite + Drizzle ORM |
-| Auth | OAuth (Google, Microsoft, Apple, Facebook) |
-| Testing | Vitest (49 unit tests) |
+| Frontend | React, TypeScript, Vite |
+| UI | shadcn/ui, Tailwind CSS |
+| Backend | Node.js, tRPC |
+| Database | SQLite, Drizzle ORM |
+| Auth | OAuth 2.0 (Google, Microsoft, Apple, Facebook) |
+| Testing | Vitest |
 
 ---
 
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 20+
 - pnpm
 
 ### Installation
 
 ```bash
-# Clone the repository
 git clone https://github.com/berknerkus-commits/hr-automation.git
 cd hr-automation
-
-# Install dependencies
 pnpm install
-
-# Set up environment variables
 cp .env.example .env
-
-# Run database migrations
 pnpm db:migrate
-
-# Start development server
 pnpm dev
 ```
-
-App runs at `http://localhost:3000`
 
 ### Running Tests
 
@@ -99,38 +80,24 @@ hr-automation/
 │       ├── components/     # Shared UI components
 │       └── lib/            # tRPC client, utilities
 ├── server/                 # Node.js backend
-│   ├── _core/              # Auth, tRPC setup, DB connection
-│   ├── routers.ts          # API route definitions
-│   └── hr.test.ts          # Unit tests (49 tests)
-├── drizzle/                # Database schema & migrations
-└── shared/                 # Shared types between client/server
+│   ├── _core/              # Auth, tRPC, database
+│   ├── routers.ts          # API routes
+│   └── hr.test.ts          # Unit tests
+├── drizzle/                # Schema & migrations
+└── shared/                 # Shared types
 ```
 
 ---
 
 ## Roadmap
 
-- [ ] Fix remaining 5 failing unit tests
-- [ ] Demo seed data (100+ employees, candidates, leave requests)
-- [ ] Email notifications for leave approvals
-- [ ] Public job application form (careers page)
-- [ ] Export reports (PDF/Excel)
-- [ ] Mobile responsive improvements
-
----
-
-## Screenshots
-
-| Dashboard | ATS Kanban | Leave Management |
-|-----------|-----------|-----------------|
-| Real-time metrics | 5-stage pipeline | Balance tracking |
+- [ ] Public-facing job application form
+- [ ] Email notifications for approvals
+- [ ] PDF / Excel report exports
+- [ ] Mobile optimization
 
 ---
 
 ## License
 
 MIT
-
----
-
-*Built with [Manus](https://manus.im)*
